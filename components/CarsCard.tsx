@@ -43,7 +43,7 @@ export default function CarCard({ car }: CarsCardProps) {
         </CardContent>
         <CardFooter className="flex justify-between">
           <Button variant="outline" onClick={() => onOpen("editCar", {car})}>Update</Button>
-          <Button >Book Now!</Button>
+          <Button onClick={() => onOpen("makeOrder", {car})} >Book Now!</Button>
         </CardFooter>
       </Card>
     </div>

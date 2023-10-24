@@ -114,7 +114,7 @@ export default function EditCarsModal() {
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
-            Create Channel
+            Edit Cars
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
