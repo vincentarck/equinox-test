@@ -6,7 +6,11 @@ export async function GET(
 ) {
   try {
    
-    const totalOrder = await db.order.findMany()
+    const totalOrder = await db.order.findMany({
+      include:{
+        car:true
+      }
+    })
 
     return NextResponse.json(totalOrder);
   } catch (error) {
