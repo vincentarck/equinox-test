@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { Car } from "@prisma/client";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,14 +9,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import Image from "next/image";
+import { useModal } from "@/hooks/useModalStore";
 
 interface CarsCardProps {
   car: Car;
 }
 export default function CarCard({ car }: CarsCardProps) {
-  const {car_name, day_rate, image_url, month_rate} = car
+  const { onOpen } = useModal();
+  const { car_name, day_rate, image_url, month_rate, id } = car;
   return (
     <div className="aspect-ratio aspect-w-1 aspect-h-1">
       <Card className="w-[350px]">
@@ -26,13 +29,21 @@ export default function CarCard({ car }: CarsCardProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div>
-            <Image src={image_url} width={120} height={120} className="w-20 h-20" alt={`${car_name}_image`}/>
+          <div className="flex flex-col gap-y-3 font-bold text-sm">
+            <Image
+              src={image_url}
+              width={120}
+              height={120}
+              className="w-full h-48 object-cover"
+              alt={`${car_name}_image`}
+            />
+            <p>Day Rate: Rp: {day_rate}</p>
+            <p>Monthly Rate: Rp: {month_rate}</p>
           </div>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <Button variant="outline">Cancel</Button>
-          <Button>Deploy</Button>
+          <Button variant="outline" onClick={() => onOpen("editCar", {car})}>Update</Button>
+          <Button >Book Now!</Button>
         </CardFooter>
       </Card>
     </div>
