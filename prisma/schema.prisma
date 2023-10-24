@@ -17,15 +17,16 @@ model Car {
   id          Int     @id @default(autoincrement())
   car_name    String  @db.Char(50)
   day_rate    Float
+  image_url    String @db.Text
   month_rate  Float
   orders      Order[]
-}
+} 
 
 model Order {
   id               Int      @id @default(autoincrement())
   car_id           Int
   car              Car      @relation(fields: [car_id], references: [id])
-  order_date       DateTime
+  order_date       DateTime @default(now())
   pickup_date      DateTime
   dropoff_date     DateTime
   pickup_location  String   @db.Char(50)
