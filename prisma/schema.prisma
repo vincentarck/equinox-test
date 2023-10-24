@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Car {
+  id          Int     @id @default(autoincrement())
+  car_name    String  @db.Char(50)
+  day_rate    Float
+  month_rate  Float
+  orders      Order[]
+}
+
+model Order {
+  id               Int      @id @default(autoincrement())
+  car_id           Int
+  car              Car      @relation(fields: [car_id], references: [id])
+  order_date       DateTime
+  pickup_date      DateTime
+  dropoff_date     DateTime
+  pickup_location  String   @db.Char(50)
+  dropoff_location String   @db.Char(50)
+
+  @@index([car_id])
+}
