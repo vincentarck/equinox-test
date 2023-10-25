@@ -7,7 +7,15 @@ const nextConfig = {
         hostname:"**"
       }
     ]
-  }
+  }, 
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://equinox-rent-rici1p01v-vincentarck.vercel.app/:path*',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
