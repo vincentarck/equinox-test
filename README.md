@@ -16,18 +16,47 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* Frontend:
+  - JavaScript
+  - React
+  - Zustand
+  - Tailwind
 
-## Learn More
+* Backend:
+  - Nextjs 13
+    
+* Databases ORM:
+  - MySQL
+  - Prisma
 
-To learn more about Next.js, take a look at the following resources:
+* Other:
+  - Git
+  - GitHub
+  - REST API
+  - Planetscale provider
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Preview
+
+Orders Page :
+![image](https://github.com/vincentarck/equinox-test/assets/73167671/9f1a8a97-08f8-4a89-9306-455d1319c519)
+
+Rent Cars Page
+![image](https://github.com/vincentarck/equinox-test/assets/73167671/14d9d201-6550-4715-89f4-728e7cd5268b)
+
+## Feature
+* CREATE
+  - Orders 
+* READ
+  - Cars
+  - Orders
+* UPDATE
+  - Cars
+* DELETE
+  - Cars
 
 ## Deploy on Vercel
 
