@@ -12,6 +12,9 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { useModal } from "@/hooks/useModalStore";
+import { db } from "@/lib/db";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 interface CarsCardProps {
   car: Car;
@@ -19,6 +22,8 @@ interface CarsCardProps {
 export default function CarCard({ car }: CarsCardProps) {
   const { onOpen } = useModal();
   const { car_name, day_rate, image_url, month_rate, id } = car;
+  const router = useRouter()
+  const handleDeleteCar = async ()  => await axios.delete(`/api/cars/${id}`).then(() => router.refresh())
   return (
     <div className="aspect-ratio aspect-w-1 aspect-h-1">
       <Card className="w-[350px]">
@@ -43,6 +48,7 @@ export default function CarCard({ car }: CarsCardProps) {
         </CardContent>
         <CardFooter className="flex justify-between">
           <Button variant="outline" onClick={() => onOpen("editCar", {car})}>Update</Button>
+          <Button variant="destructive" onClick={handleDeleteCar} >Delete Cars</Button>
           <Button onClick={() => onOpen("makeOrder", {car})} >Book Now!</Button>
         </CardFooter>
       </Card>
