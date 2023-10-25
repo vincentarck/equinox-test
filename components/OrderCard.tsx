@@ -38,6 +38,7 @@ export default function OrderCard({ order }: OrderCardProps) {
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-y-3 font-bold text-sm">
+            <p className="text-slate-400">Order Date: {order_date.toString()}</p>
             <Image
               src={image_url}
               width={120}

@@ -104,7 +104,7 @@ export default function EditCarsModal() {
   }
 
   const handleClose = () => {
-    form.reset();
+    // form.reset();
     onClose();
   }
 
