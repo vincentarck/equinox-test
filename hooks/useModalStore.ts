@@ -1,4 +1,4 @@
-import { Car } from "@prisma/client";
+import { Car } from "../node_modules/.prisma/client";
 import { create } from "zustand";
 
 export type ModalType = "editCar" | "makeOrder" 

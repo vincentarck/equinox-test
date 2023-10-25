@@ -1,6 +1,6 @@
 import OrderCard from '@/components/OrderCard'
 import { db } from '@/lib/db'
-import { Order } from '@prisma/client'
+import { Order } from "../../../../node_modules/.prisma/client";
 import Image from 'next/image'
 
 export default async function OrdersPage() {

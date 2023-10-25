@@ -2,7 +2,7 @@ import Image from "next/image";
 import axios from "axios";
 import { db } from "@/lib/db";
 import CarsCard from "@/components/CarsCard";
-import { Car } from "@prisma/client";
+import { Car } from "../../../../node_modules/.prisma/client";
 
 export default async function CarsPage() {
   const cars: Car[] = await db.car.findMany();

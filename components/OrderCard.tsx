@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import { Order, Car } from "@prisma/client";
+import { Order, Car } from "../node_modules/.prisma/client";
 
 interface OrderCardProps {
   order: Order & {

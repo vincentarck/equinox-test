@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Car } from "@prisma/client";
+import { Car } from "../node_modules/.prisma/client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
