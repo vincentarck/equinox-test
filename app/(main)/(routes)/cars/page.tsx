@@ -2,9 +2,10 @@ import Image from "next/image";
 import axios from "axios";
 import { db } from "@/lib/db";
 import CarsCard from "@/components/CarsCard";
+import { Car } from "@prisma/client";
 
 export default async function CarsPage() {
-  const cars = await db.car.findMany();
+  const cars: Car[] = await db.car.findMany();
   console.log(cars);
   return (
     <div>

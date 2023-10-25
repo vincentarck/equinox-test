@@ -1,9 +1,10 @@
 import OrderCard from '@/components/OrderCard'
 import { db } from '@/lib/db'
+import { Order } from '@prisma/client'
 import Image from 'next/image'
 
 export default async function OrdersPage() {
-  const orders = await db.order.findMany({
+  const orders: Order[] = await db.order.findMany({
     include:{
       car:true
     }
